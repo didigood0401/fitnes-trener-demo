@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Пульс: премиум-демо</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#071411;--deep:#0d241e;--mint:#3ff0b2;--sun:#ffb347;--coral:#ff5f45;--milk:#effaf5;--soft:#9db8ae}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.55 Manrope,Arial,sans-serif;color:var(--milk);background:var(--ink);overflow-x:hidden}
+h1,h2,h3{font-family:Unbounded,Arial,sans-serif;font-weight:800;line-height:1.05}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.note{font-size:13px;color:var(--soft);text-align:center;padding:8px 16px}
+.hero{position:relative;min-height:calc(100vh - 38px);display:flex;align-items:flex-end;overflow:hidden;background:url(../img/p5.jpg) 62% 22%/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(95deg,#071411f7 18%,#071411aa 58%,#07141133),linear-gradient(0deg,#071411 2%,transparent 40%)}
+.in{position:relative;z-index:2;padding-bottom:64px;width:100%}
+.top{position:absolute;z-index:3;top:20px;left:0;right:0;display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 18px Unbounded,Arial}
+.logo i{font-style:normal;color:var(--mint)}
+.btn{display:inline-block;background:var(--mint);color:var(--ink);font-weight:800;padding:17px 30px;border-radius:40px;border:0;font-size:17px;cursor:pointer;text-decoration:none;transition:transform .16s,background .2s}
+.btn:hover{background:#7bf7cb}
+.btn:active{transform:scale(.97)}
+h1{font-size:clamp(46px,10.4vw,150px);letter-spacing:-.02em}
+h1 span{display:block;color:var(--mint)}
+.sub{max-width:520px;margin:20px 0 26px;font-size:19px;color:#d8ece4}
+.ecg{position:absolute;left:0;right:0;bottom:0;z-index:1;width:100%;height:150px;opacity:.9}
+.ecg path{fill:none;stroke:var(--coral);stroke-width:3;stroke-dasharray:2600;stroke-dashoffset:2600;animation:run 4.2s linear infinite}
+@keyframes run{to{stroke-dashoffset:-2600}}
+.mq{overflow:hidden;background:var(--mint);color:var(--ink);padding:13px 0;white-space:nowrap}
+.mq div{display:inline-block;font:800 20px Unbounded,Arial;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:92px 0}
+h2{font-size:clamp(32px,5.2vw,64px);margin-bottom:16px}
+.lede{color:var(--soft);max-width:620px;margin-bottom:38px}
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ctl label{display:flex;justify-content:space-between;font-weight:800;margin-top:22px}
+.ctl output{color:var(--mint)}
+input[type=range]{width:100%;accent-color:var(--mint);height:36px}
+.goals{display:flex;gap:8px;flex-wrap:wrap}
+.goals button{background:none;border:1px solid #ffffff44;color:var(--milk);font:800 15px Manrope,Arial;padding:12px 18px;border-radius:30px;cursor:pointer}
+.goals button[aria-pressed=true]{background:var(--milk);color:var(--ink)}
+.rings{position:relative;max-width:440px;margin:0 auto}
+.rings svg{display:block;transform:rotate(-90deg)}
+.rings circle{fill:none;stroke-width:26;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.22,1,.36,1)}
+.cen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.cen b{font:800 48px/1 Unbounded,Arial}
+.legend{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:15px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px}
+.cards{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px}
+figure{position:relative;margin:0;border-radius:22px;overflow:hidden;min-height:440px}
+figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+figure:hover img{transform:scale(1.05)}
+figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 22px;background:linear-gradient(transparent,#071411ee)}
+figcaption b{font:800 44px/1 Unbounded,Arial;display:block;color:var(--mint)}
+.small{font-size:13px;color:var(--soft);margin-top:12px}
+.final{background:var(--deep);border-radius:32px;padding:clamp(26px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+form{display:grid;gap:10px}
+input[type=text],input[type=tel]{font:inherit;padding:16px;border:1px solid #ffffff44;border-radius:14px;background:#ffffff10;color:#fff;width:100%}
+input::placeholder{color:var(--soft)}
+#sum{color:var(--mint);font-weight:800}
+.ok{display:none;color:var(--mint);font-weight:800}
+.msg{display:flex;gap:8px;flex-wrap:wrap}
+.msg a{flex:1;min-width:110px;text-align:center;padding:12px;border-radius:30px;border:1px solid #ffffff44;color:#fff;text-decoration:none;font-weight:800}
+footer{padding:26px 0;color:var(--soft);font-size:14px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+@media(max-width:820px){.lab,.final{grid-template-columns:1fr}.cards{grid-template-columns:1fr}figure{min-height:340px}section{padding:60px 0}.hero{background-position:60% top}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ecg path,.mq div{animation:none}.ecg path{stroke-dashoffset:0}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="note">Демо-концепт: имя, цифры и цены условные, фото стоковые. На реальном сайте будут Ваши.</div>
+<div class="hero">
+<div class="top wrap" style="max-width:1240px"><div class="logo">ПУЛЬС<i>.</i></div></div>
+<svg class="ecg" viewBox="0 0 1400 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100H280l24-14 22 14h50l20-84 34 128 24-44h210l24-14 22 14h50l20-84 34 128 24-44h210l24-14 22 14h50l20-84 34 128 24-44h120"/></svg>
+<div class="in wrap">
+<h1>Новая<span>форма</span></h1>
+<p class="sub">Персональные тренировки, питание и сон в одной системе. Без голодовок и изнуряющих марафонов.</p>
+<a class="btn" href="#lab">Собрать свою неделю</a>
+</div>
+</div>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+<section id="lab"><div class="wrap lab">
+<div class="ctl">
+<h2>Соберите неделю</h2>
+<p class="lede" style="margin-bottom:18px">Двигайте ползунки. Кольца покажут, какой режим реален именно для Вас.</p>
+<div class="goals" id="goals"></div>
+<label for="d">Тренировок в неделю <output id="dO"></output></label><input id="d" type="range" min="2" max="5" value="3">
+<label for="m">Минут на тренировку <output id="mO"></output></label><input id="m" type="range" min="30" max="90" step="15" value="60">
+<label for="s">Сон, часов <output id="sO"></output></label><input id="s" type="range" min="5" max="9" step=".5" value="7">
+</div>
+<div>
+<div class="rings"><svg viewBox="0 0 300 300" id="r"></svg><div class="cen"><b id="pct"></b><span id="st" style="font-size:15px;color:var(--soft)"></span></div></div>
+<div class="legend"><span><i style="background:var(--mint)"></i>Сила</span><span><i style="background:var(--sun)"></i>Кардио</span><span><i style="background:var(--coral)"></i>Восстановление</span></div>
+</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+<h2>Истории клиентов</h2>
+<div class="cards">
+<figure><img src="../img/p2.jpg" alt="Клиентка в зале" loading="lazy"><figcaption><b>-9 кг</b>Марина, 14 недель</figcaption></figure>
+<figure><img src="../img/p1.jpg" alt="Клиент на тренировке" loading="lazy"><figcaption><b>+6 кг</b>Денис, 20 недель</figcaption></figure>
+<figure><img src="../img/p6.jpg" alt="Клиентка с гантелью" loading="lazy"><figcaption><b>0 срывов</b>Ольга, 3 раза в неделю</figcaption></figure>
+</div>
+<p class="small">Пример оформления блока. На сайте будут только реальные результаты с согласия клиентов.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap final" id="lead">
+<div><h2 style="font-size:clamp(28px,4vw,48px)">Первая тренировка бесплатно</h2><p>Ваш режим: <span id="sum"></span></p></div>
+<form id="f"><input type="text" required placeholder="Имя" aria-label="Имя"><input type="tel" required placeholder="Телефон" aria-label="Телефон"><button class="btn">Забрать план</button><div class="ok" id="ok" role="status">Демо: заявка принята</div><div class="msg"><a href="#lead">Telegram</a><a href="#lead">MAX</a><a href="#lead">WhatsApp</a></div></form>
+</div></section>
+<div class="wrap"><footer>Демо-концепт. Фото: StockSnap, CC0.</footer></div>
+<script>
+mq.textContent=Array(10).join('СИЛА • ВЫНОСЛИВОСТЬ • ПИТАНИЕ • СОН • ТЕХНИКА • ');
+var G={'Похудеть':[.55,.9],'Набрать массу':[1,.3],'Держать форму':[.75,.6]},g='Держать форму',R=[122,90,58],C=['#3ff0b2','#ffb347','#ff5f45'],h='';
+R.forEach(function(q,i){h+='<circle cx="150" cy="150" r="'+q+'" stroke="#ffffff14"/><circle class="v" cx="150" cy="150" r="'+q+'" stroke="'+C[i]+'" stroke-dasharray="'+(2*Math.PI*q)+'" stroke-dashoffset="'+(2*Math.PI*q)+'"/>'});r.innerHTML=h;
+var V=r.querySelectorAll('.v'),W=document.getElementById('goals');
+Object.keys(G).forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=function(){g=n;up()};W.appendChild(b)});
+function up(){var dv=+d.value,mv=+m.value,sv=+s.value;dO.textContent=dv;mO.textContent=mv;sO.textContent=sv;
+[].forEach.call(W.children,function(b){b.setAttribute('aria-pressed',b.textContent===g)});
+var load=Math.min(1,dv*mv/240),a=Math.min(1,load*G[g][0]+.15),b2=Math.min(1,load*G[g][1]+.1),c=Math.max(.15,Math.min(1,(sv-4.5)/4)),t=Math.round((a+b2+c)/3*100);
+[a,b2,c].forEach(function(v,i){var L=2*Math.PI*R[i];V[i].style.strokeDashoffset=L*(1-v)});
+pct.textContent=t+'%';st.textContent=t>74?'сильный режим':t>54?'хороший старт':'добавим движения';
+sum.textContent=g.toLowerCase()+', '+dv+' раза в неделю по '+mv+' минут'}
+[d,m,s].forEach(function(e){e.oninput=up});up();
+f.onsubmit=function(e){e.preventDefault();ok.style.display='block'};
+</script>
+</body>
+</html>
